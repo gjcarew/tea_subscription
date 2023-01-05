@@ -3,7 +3,7 @@ from subscriptions.models import Customer, Subscription
 
 
 class CustomerSerializer(serializers.ModelSerializer):
-    
+    subscriptions = SubscriptionSerializer(many=True, read_only=True)
     class Meta:
         ordering = ['-id']
         model = Customer
